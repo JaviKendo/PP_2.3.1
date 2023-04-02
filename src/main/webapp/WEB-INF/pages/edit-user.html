@@ -16,7 +16,7 @@
 <div>
     <th:block>
         <form th:method="PATCH" th:action="@{/users/{id}(id=${user.getId()})}" th:object="${user}">
-            <table th:border="0" th:align="center" th:width="250" th:height="50">
+            <table th:border="0" th:align="center" th:width="500" th:height="50">
                 <tbody>
                 <tr th:align="left">
                     <td>
@@ -24,6 +24,11 @@
                     </td>
                     <td>
                         <input th:type="text" th:field="*{firstName}" id="firstName"/>
+                    </td>
+                    <td>
+                        <div style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">
+                            Name error
+                        </div>
                     </td>
                 </tr>
                 <tr th:align="left">
@@ -33,6 +38,11 @@
                     <td>
                         <input th:type="text" th:field="*{lastName}" id="lastName"/>
                     </td>
+                    <td>
+                        <div style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">
+                            Surname error
+                        </div>
+                    </td>
                 </tr>
                 <tr th:align="left">
                     <td>
@@ -41,6 +51,11 @@
                     <td>
                         <input th:type="text" th:field="*{age}" id="age"/>
                     </td>
+                    <td>
+                        <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">
+                            Age error
+                        </div>
+                    </td>
                 </tr>
                 <tr th:align="left">
                     <td>
@@ -48,6 +63,11 @@
                     </td>
                     <td>
                         <input th:type="text" th:field="*{email}" id="email"/>
+                    </td>
+                    <td>
+                        <div style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                            Email error
+                        </div>
                     </td>
                 </tr>
                 </tbody>
